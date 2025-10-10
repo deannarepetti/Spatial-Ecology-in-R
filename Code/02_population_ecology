@@ -1,0 +1,34 @@
+# Code for studying population spread over space
+
+install.packages ("spatstat")
+library (spatstat)
+
+bei
+plot(bei)
+
+# changing the point type
+plot(bei, pch=15)
+
+# changing the point dimension
+plot(bei, pch=15, cex=0.5)
+
+# ancillary variables
+bei.extra
+plot (bei.extra)
+
+# selecting one layer, e.g., elev
+el  <- bei.extra$elev
+plot(el)
+
+el  <- bei.extra[[1]]    #double brackets because it's not a simple graph but a ruster
+
+# density map
+dmap <- density(bei)
+dmap
+
+plot(dmap)
+plot(bei)
+points(bei)
+plot(el)
+points(bei)
+
